@@ -1,0 +1,81 @@
+body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #121212;
+      font-family: monospace;
+    }
+
+    .loader-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .infinity-loader {
+      width: 120px;
+      height: 60px;
+      position: relative;
+    }
+
+    .infinity-loader svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .infinity-loader path {
+      fill: none;
+      stroke: #8a2be2;
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      animation: trace 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .infinity-loader .track {
+      stroke: rgba(255, 255, 255, 0.05);
+      stroke-dasharray: none;
+      animation: none;
+      filter: none;
+    }
+
+    .loading-text {
+      color: #8a2be2;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-left: 6px; /* Offsets the letter spacing to center visually */
+      animation: text-glow 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes trace {
+      0% {
+        stroke-dashoffset: 100;
+        stroke: #8a2be2;
+      }
+      50% {
+        stroke-dashoffset: 0;
+        stroke: #00d2ff;
+      }
+      100% {
+        stroke-dashoffset: -100;
+        stroke: #8a2be2;
+      }
+    }
+
+    @keyframes text-glow {
+      0%, 100% {
+        color: #8a2be2;
+        opacity: 0.6;
+      }
+      50% {
+        color: #00d2ff;
+        opacity: 1;
+      }
+    }
